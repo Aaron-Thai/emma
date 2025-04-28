@@ -32,5 +32,5 @@ Obviously this will only work with the words in the book that were available in 
 I have tried to include a vocabulary list on the side, but it slows the page significantly.
 
 Standard features to borrow from Character AI include chat history, expanded training data, and more varied answers.  
-NLP to read user prompts, detect the most relevant keyword, and perform sentiment analysis would also be interesting.  
+NLP to read user prompts, detect the most relevant keyword, and do sentiment analysis would also be interesting.  
 But first, being able to prompt with a full sentence is probably the priority for natural interaction.
