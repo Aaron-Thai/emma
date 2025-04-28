@@ -4,6 +4,9 @@ import streamlit as st
 import nltk
 from nltk.tokenize import sent_tokenize
 
+# Download required NLTK data
+nltk.download('punkt')
+
 # Load Emma text from a local file
 with open('emma.txt', 'r', encoding='utf-8') as file:
     emma_text = file.read()
