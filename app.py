@@ -3,6 +3,7 @@
 import streamlit as st
 import nltk
 from nltk.tokenize import sent_tokenize
+nltk.download('gutenberg')
 
 # Get the text from the NLTK corpus
 emma_text = nltk.corpus.gutenberg.raw('austen-emma.txt')
