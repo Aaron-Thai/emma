@@ -2,8 +2,13 @@
 
 import streamlit as st
 import nltk
-from nltk.tokenize import sent_tokenize
 nltk.download('gutenberg')
+try:
+    nltk.data.find('tokenizers/punkt')
+except LookupError:
+    nltk.download('punkt')
+from nltk.tokenize import sent_tokenize
+
 
 # Get the text from the NLTK corpus
 emma_text = nltk.corpus.gutenberg.raw('austen-emma.txt')
