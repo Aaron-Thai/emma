@@ -3,7 +3,7 @@ import nltk
 from nltk.tokenize import sent_tokenize
 
 # Only download 'punkt' once
-nltk.download('punkt', quiet=True)
+nltk.download('punkt_tab', quiet=True)
 
 # Cache loading the book
 @st.cache_data
