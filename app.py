@@ -5,7 +5,7 @@ from nltk.tokenize import sent_tokenize
 import re
 
 # Download punkt once
-nltk.download('punkt', quiet=True)
+nltk.download('punkt_tab', quiet=True)
 
 # Cache loading and cleaning the book
 @st.cache_data
@@ -93,4 +93,4 @@ if enter_clicked:
         st.session_state.emma_output = result
     else:
         st.warning("Please enter a part of a sentence to search.")
-    st.rerun()
+    # st.rerun()
