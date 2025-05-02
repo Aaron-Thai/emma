@@ -24,7 +24,7 @@ Meta.AI was prompted to provide code for the webapp, and it chose to use Streaml
 ChatGPT was later used to add more functionality and fixes.
 
 # Results
-Prompting: enter any text using a word from the book 
+Prompting: enter any text using a word from the book  
 Model: will find the first sentence with your word  
 Output: receive it or the next sentence after that  
 
