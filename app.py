@@ -1,9 +1,10 @@
 import streamlit as st
 import nltk
+import random
 from nltk.tokenize import sent_tokenize
 
 # Only download 'punkt' once
-nltk.download('punkt_tab', quiet=True)
+nltk.download('punkt', quiet=True)
 
 # Cache loading the book
 @st.cache_data
@@ -13,16 +14,24 @@ def load_emma_text():
 
 emma_text = load_emma_text()
 sentences = sent_tokenize(emma_text)
+sentences = [s.replace('\n', ' ') for s in sentences]  # remove line break character
 
-def get_next_sentence(search_string):
-    search_string = search_string.lower()
-    for i, s in enumerate(sentences):
-        if search_string in s.lower():
-            if i < len(sentences) - 1:
-                return sentences[i + 1]
-            else:
-                return "This is the last sentence in the book."
-    return "Sentence not found in the book."
+def get_emma_response(user_input):
+    user_input = user_input.lower()
+    matching_sentences = [
+        s for s in sentences if any(word in s.lower() for word in user_input.split())
+    ]
+
+    if matching_sentences:
+        return random.choice(matching_sentences)
+    else:
+        fallback_replies = [
+            "I cannot always comprehend others, but I always have a ready smile.",
+            "Surely you must know I am not without resource, even in perplexity.",
+            "If I cannot find the words, I shall simply dazzle instead.",
+            "Your message puzzles me, but I shall pretend otherwise!"
+        ]
+        return random.choice(fallback_replies)
 
 # Streamlit app
 st.markdown("<h1 style='text-align: center;'>Emma</h1>", unsafe_allow_html=True)
@@ -46,14 +55,14 @@ output_placeholder.markdown(
 st.write("")  # spacing
 st.write("")
 
-search_string = st.text_input("Enter part of a sentence:")
+search_string = st.text_input("Message:")
 
 enter_clicked = st.button("Enter")
 
 if enter_clicked:
     if search_string.strip():
         with st.spinner('Thinking...'):
-            result = get_next_sentence(search_string)
+            result = get_emma_response(search_string)  # Using the updated function
         st.session_state.emma_output = result
     else:
         st.warning("Please enter a part of a sentence to search.")
