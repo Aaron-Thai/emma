@@ -21,6 +21,7 @@ She stands in an English garden, with a confident, playful smile.
 Soft lighting, detailed background, romantic and classic anime art style."  
 
 Meta.AI was prompted to provide code for the webapp, and it chose to use Streamlit not me. :)
+ChatGPT was later used to add more functionality and fixes.
 
 # Results
 Prompting: enter one word from the book  
