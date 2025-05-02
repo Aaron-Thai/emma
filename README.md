@@ -1,5 +1,5 @@
 # Emma
-Chat with Jane Austen's Emma
+Chat with Jane Austen's Emma, try it here: https://emma-ai.streamlit.app/
 
 # Introduction
 Conversational AI like ChatGPT has come under fire from the NYT for copyright infringement.  
